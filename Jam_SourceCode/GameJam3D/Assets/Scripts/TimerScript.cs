@@ -5,7 +5,7 @@ using TMPro;
 
 public class TimerScript : MonoBehaviour
 {
-    [SerializeField] private float _time;
+    public float _time;
     private bool _timerOn = false;
 
     public TextMeshProUGUI _timeText;
@@ -29,7 +29,6 @@ public class TimerScript : MonoBehaviour
         else
         {
             Debug.Log("Time's up.");
-            _time = 0;
             _timerOn = false;
         }
     }
@@ -41,11 +40,12 @@ public class TimerScript : MonoBehaviour
         float minutes = Mathf.FloorToInt(currentTime / 60);
         float seconds = Mathf.FloorToInt(currentTime % 60);
 
-        _timeText.text = string.Format("{0:00} : {1:00}", minutes, seconds);
+        _timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
     public void LoseTime(float timeLost)
     {
+
         _time -= timeLost;
         Debug.Log("Time lost: " + timeLost);
     }

@@ -12,7 +12,7 @@ public class PowerUpAddTime : MonoBehaviour
         {
             other.GetComponent<TimerScript>().GainTime(_timeAdd);
 
-            Destroy(other.gameObject);
+            Destroy(gameObject);
         }
     }
 }

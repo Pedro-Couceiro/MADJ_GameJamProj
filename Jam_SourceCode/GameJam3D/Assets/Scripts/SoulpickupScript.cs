@@ -13,6 +13,14 @@ public class SoulpickupScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            var hasSomethinginfront = Physics.Raycast(transform.position, transform.forward, out RaycastHit hitinfo, 1.5f);
+
+            if(hasSomethinginfront && hitinfo.collider.CompareTag("Player"))
+            {
+
+            }
+        }
     }
 }
